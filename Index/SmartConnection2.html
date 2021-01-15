@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Current Weather</title>
+</head>
+<body>
+  <div id="weather">
+    <div id="description"></div>
+    <h1 id="temp"></h1>
+    <div id="location"></div>
+  </div>
+  
+  <script lang="text/Javascript">
+  function weatherBalloon( cityID ) {
+    var key = '{8a8a72700809405bb054002474d459cd}';
+    fetch('https://api.openweathermap.org/data/2.5/weather?id=' + 6167865+ '&appid=' + key)  
+    .then(function(resp) { return resp.json() }) // Convert data to json
+    .then(function(data) {
+      console.log(data);
+    })
+    .catch(function() {
+      // catch any errors
+    });
+  }
+  
+  window.onload = function() {
+    weatherBalloon( 6167865 );
+  }
+</script>
+  
+</body>
+
+<script src="Javascript/weather.js"></script>
+</html>
